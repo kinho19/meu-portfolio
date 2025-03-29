@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu portfólio</title>
+    <link rel="stylesheet" href="/CSS/style.css"> 
+
+</head>
+<body>
+
+    <div class="neon-background"></div>
+
+    <header>
+        <h1 class="titulo-principal">Meu Portfólio</h1>
+        <nav>
+            <ul>
+                <li><a href="paginas/SobreMim.html">Sobre Mim</a></li>
+                <li><a href="paginas/Formacao.html">Formação</a></li> 
+                <li><a href="paginas/MeuPortfolio.html">Meu Portfólio</a></li>
+                <li><a href="paginas/Contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1 class="titulo-inicial" id="texto-dinamico"></h1>
+        <p class="p-index">Para mais detalhes sobre mim, formação e projetos, navegue pelo menu.</p>
+    </section>
+
+
+
+    <!--efeito de texto dinâmico, usando o <script> nos permite utilizar código JavaScript dentro do HTML-->
+<script>
+    const text = "Seja Bem-Vindo ao meu Portfólio";
+    
+    let index = 0;
+
+    function digitar() {
+        if (index < text.length) {
+            document.getElementById("texto-dinamico").innerHTML += text.charAt(index);
+            index++;
+            setTimeout(digitar, 100);
+        }
+    }
+
+    window.onload = digitar;
+</script>
+
+</body>
+</html>
